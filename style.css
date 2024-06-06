@@ -1,0 +1,123 @@
+:root {
+ --primary-400: hsl(215, 51%, 70%);
+ --primary-500: hsl(178, 100%, 50%);
+
+ --bg: hsl(217, 54%, 11%);
+ --card-bg: hsl(216, 50%, 16%);
+ --line: hsl(215, 32%, 27%);
+ --white: hsl(0, 0%, 100%);
+
+ --ff: "Outfit";
+ --fz: 18px;
+}
+*,
+*::after,
+*::before {
+ box-sizing: border-box;
+}
+img {
+ display: block;
+ width: 100%;
+}
+body {
+ margin: 0;
+ padding: 0;
+ background-color: var(--bg);
+ font-family: var(--ff);
+}
+
+:hover:where(h1, span, .product__creator-name, .card__product-img) {
+ color: var(--primary-500);
+ cursor: pointer;
+}
+.card__product-img:hover {
+ .hover {
+  display: block;
+ }
+}
+h1 {
+ font-size: 1.3rem;
+ font-weight: 600;
+}
+h3 {
+ font-size: 1rem;
+ font-weight: 400;
+}
+
+h1,
+h4 {
+ color: var(--white);
+}
+main {
+ height: 100%;
+ display: grid;
+ grid-column: 100%;
+ place-content: center;
+ height: 100svh;
+}
+.card {
+ padding: 1.5rem;
+ margin: auto;
+ background-color: var(--card-bg);
+ width: 20rem;
+ border-radius: 1rem;
+ /* outline: 1rem solid red; */
+ box-shadow: 0 0.5rem 0 0.5rem hsl(217, 54%, 11%, 0.7),
+  0 1.2rem 1rem 0.8rem hsl(216, 50%, 16%, 0.2);
+}
+.card__product-img {
+ --img-hover: hsl(178, 100%, 50%, 0.5);
+ position: relative;
+}
+.card__product-img img {
+ border-radius: 0.5rem;
+ cursor: pointer;
+}
+.hover {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ inset: 0;
+ background-color: var(--img-hover);
+ background-image: url(images/icon-view.svg);
+ background-position: center;
+ background-repeat: no-repeat;
+ display: none;
+ border-radius: 1rem;
+ cursor: pointer;
+}
+
+.product__description,
+.product__price p,
+.product__expired h4,
+.product__creator p {
+ color: var(--primary-400);
+ font-weight: 300;
+}
+.product__price,
+.product__expired {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+}
+.product__type {
+ display: flex;
+ justify-content: space-between;
+ border-bottom: 1px solid var(--line);
+}
+
+.product__price {
+ color: var(--primary-500);
+}
+.product__creator {
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ margin-top: 0.5rem;
+}
+.product__creator img {
+ width: 2rem;
+ height: 2rem;
+ border: 1px solid var(--bg);
+ border-radius: 50%;
+}
